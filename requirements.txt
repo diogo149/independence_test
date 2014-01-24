@@ -1,0 +1,8 @@
+numpy==1.6.1
+pandas==0.10.0
+python-dateutil==2.2
+pytz==2013.9
+scikit-learn==0.13.1
+scipy==0.10.1
+six==1.5.2
+wsgiref==0.1.2
