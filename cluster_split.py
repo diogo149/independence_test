@@ -46,18 +46,22 @@ def independence_test(data):
                 PUBLICINFO_FILE,
                 OUT_FILENAME]
         # subprocess.call(call)
-        os.system(" ".join(call) + " > /dev/null")
+        os.system(" ".join(call) + " > /dev/null") # throw away STDOUT
         result.append(read_result(OUT_FILENAME))
         os.remove(IN_FILENAME)
         os.remove(OUT_FILENAME)
     return AGGREGATOR(result)
 
 """
+Things to figure out:
+-use smarter way of determining number of clusters
+-try different aggregators
+-will Jose's code behave as intended with negative / real values?
+
 Potential improvements:
 -integrate Jose's code so we don't have to keep reading the model.pkl file
 -parallelize the inner loop
--use smarter way of determining number of clusters
--try different aggregators
+-serialize model as a memory mapped file
 """
 
 if __name__ == "__main__":
